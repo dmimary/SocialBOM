@@ -228,7 +228,7 @@ get '/parser' => sub {
       }
     }
     
-    $self->render(json => {"price" => $price});	
+    $self->render(json => {"price" => $price, "name" => 'Aliexpress'});	
   }
 
   # PARSER FOR EBAY
@@ -259,7 +259,7 @@ get '/parser' => sub {
     
     my $d_ind = index $price, '.';
     $price = substr $price, 0, $d_ind + 3;
-    $self->render(json => {"price" => $price});
+    $self->render(json => {"price" => $price, "name" => 'Ebay'});
   }
 };
 
